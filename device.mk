@@ -64,10 +64,13 @@ PRODUCT_COPY_FILES += \
 
 # USB
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/init/init.s5e9945.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.s5e9945.usb.rc \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.accessory.xml \
     frameworks/native/data/etc/android.hardware.usb.host.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.host.xml
 
-PRODUCT_PACKAGES += android.hardware.usb-service.samsung
+PRODUCT_PACKAGES += \
+    android.hardware.usb-service.samsung \
+    android.hardware.usb.gadget-service.samsung
 
 # VNDK
 PRODUCT_PACKAGES += vndservicemanager
