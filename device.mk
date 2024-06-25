@@ -52,6 +52,9 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/qcom-caf/wlan \
     hardware/samsung
 
+# Updater
+AB_OTA_UPDATER := false
+
 
 # Audio
 PRODUCT_COPY_FILES += \
