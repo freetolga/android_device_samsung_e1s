@@ -20,13 +20,4 @@ PRODUCT_SHIPPING_API_LEVEL := 34
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/samsung/e1s-kernel/kernel
-else
-LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
-PRODUCT_COPY_FILES := \
-	$(LOCAL_KERNEL):kernel
-
 $(call inherit-product-if-exists, vendor/samsung/e1s/device-vendor.mk)
