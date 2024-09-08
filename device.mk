@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+# API Levels
+PRODUCT_SHIPPING_API_LEVEL := 34
+
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 LOCAL_KERNEL := device/samsung/e1s-kernel/kernel
 else
