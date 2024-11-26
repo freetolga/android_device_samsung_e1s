@@ -31,6 +31,7 @@ PRODUCT_PACKAGES += \
 
 # Init
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/fstab.s5e9945:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.s5e9945 \
     $(LOCAL_PATH)/configs/fstab.s5e9945:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/fstab.s5e9945
 
 # Kernel Modules
@@ -41,6 +42,10 @@ PRODUCT_PACKAGES += \
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
+# VNDK
+PRODUCT_PACKAGES += vndservicemanager
+
 
 # Proprietary files
 $(call inherit-product, vendor/samsung/e1s/e1s-vendor.mk)
