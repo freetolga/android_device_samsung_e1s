@@ -1,0 +1,3 @@
+# Graphics
+debug.renderengine.backend=skiavkthreaded
+ro.hardware.vulkan=samsung
