@@ -1,0 +1,9 @@
+on post-fs
+    rm /metadata/logcat.txt
+    start logcat_metadata
+
+service logcat_metadata /system/bin/logcat -b all -f /metadata/logcat.txt -v threadtime
+    class main
+    user root
+    group system
+    disabled
