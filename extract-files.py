@@ -28,10 +28,24 @@ namespace_imports = [
 blob_fixups: blob_fixups_user_type = {
     'vendor/etc/init/init.s5e9945.rc': blob_fixup()
         .regex_replace('vendor_spay', 'system'),
+    (
+        'vendor/lib64/hw/audio.primary.s5e9945.so',
+        'vendor/lib64/libaudioproxy2.so',
+        'vendor/lib64/libaudioparamupdate.so',
+    ): blob_fixup()
+        .replace_needed('libaudioroute.so', 'libaudioroute_samsung.so')
+        .replace_needed('libtinyalsa.so', 'libtinyalsa_samsung.so'),
+    'vendor/lib64/libalsautils_sec.so': blob_fixup()
+        .replace_needed('libtinyalsa.so', 'libtinyalsa_samsung.so'),
+    'vendor/lib64/libaudioroute_samsung.so': blob_fixup()
+        .fix_soname()
+        .replace_needed('libtinyalsa.so', 'libtinyalsa_samsung.so'),
     'vendor/lib64/libexynosgraphicbuffer.so': blob_fixup()
         .add_needed('libshim_ui.so'),
     'vendor/lib64/libskeymint_cli.so': blob_fixup()
         .add_needed('libshim_crypto.so'),
+    'vendor/lib64/libtinyalsa_samsung.so': blob_fixup()
+        .fix_soname(),
 }  # fmt: skip
 
 
