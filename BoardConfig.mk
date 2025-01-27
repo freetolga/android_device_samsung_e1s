@@ -116,6 +116,9 @@ TARGET_USERIMAGES_USE_F2FS := true
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/e1s
 
+# RIL
+ENABLE_VENDOR_RIL_SERVICE := true
+
 # USB
 $(call soong_config_set,samsungUsbGadgetVars,gadget_name,17900000.dwc3)
 
@@ -128,7 +131,9 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 0
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 0
 
 # VINTF
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := device/samsung/e1s/configs/vintf/compatibility_matrix.device.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
+    device/samsung/e1s/configs/vintf/compatibility_matrix.device.xml \
+    hardware/samsung/vintf/samsung_framework_compatibility_matrix.xml
 DEVICE_MANIFEST_FILE := device/samsung/e1s/configs/vintf/manifest.xml
 
 # Wi-Fi
