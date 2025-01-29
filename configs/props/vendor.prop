@@ -1,3 +1,6 @@
+# Codec2
+vendor.debug.c2.sbwc.enable=true
+
 # Graphics
 debug.renderengine.backend=skiavkthreaded
 ro.hardware.vulkan=samsung
