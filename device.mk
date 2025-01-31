@@ -35,6 +35,10 @@ PRODUCT_SHIPPING_API_LEVEL := 34
 PRODUCT_BRAND := Android
 PRODUCT_MANUFACTURER := samsung
 
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+PRODUCT_ENFORCE_RRO_TARGETS := *
+
 # Partitions
 $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 
@@ -137,6 +141,11 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepdetector.xml
 
 PRODUCT_PACKAGES += android.hardware.sensors-service.samsung-multihal
+
+# Touchscreen
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/init/init.touch.sampling.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.touch.sampling.rc \
+    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
 
 # USB
 PRODUCT_COPY_FILES += \
