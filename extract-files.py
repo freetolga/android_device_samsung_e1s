@@ -38,6 +38,10 @@ blob_fixups: blob_fixups_user_type = {
     ): blob_fixup()
         .replace_needed('libaudioroute.so', 'libaudioroute_samsung.so')
         .replace_needed('libtinyalsa.so', 'libtinyalsa_samsung.so'),
+    'vendor/lib64/hw/camera.s5e9945.so': blob_fixup()
+        .add_needed('libui_shim.so'),
+    'vendor/lib64/lib_profiler.so': blob_fixup()
+        .replace_needed('libprotobuf-cpp-full-21.7.so', 'libprotobuf-cpp-full-21.12.so'),
     'vendor/lib64/libalsautils_sec.so': blob_fixup()
         .replace_needed('libtinyalsa.so', 'libtinyalsa_samsung.so'),
     'vendor/lib64/libaudioroute_samsung.so': blob_fixup()
@@ -50,6 +54,11 @@ blob_fixups: blob_fixups_user_type = {
         .sig_replace(
             '0e 40 f9 e1 03 16 aa 82 0c 80 52 e3 03 15 aa',
             '0e 40 f9 e1 03 16 aa 82 0c 80 52 03 00 80 d2'),
+    (
+        'vendor/lib64/libsensorlistener.so',
+        'vendor/lib64/libvdis_core.so',
+    ): blob_fixup()
+        .add_needed('libshim_sensorndkbridge.so'),
     'vendor/lib64/libskeymint_cli.so': blob_fixup()
         .add_needed('libshim_crypto.so'),
     'vendor/lib64/libtinyalsa_samsung.so': blob_fixup()
