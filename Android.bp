@@ -1,0 +1,5 @@
+prebuilt_etc {
+    name: "hdr_samsung_mx.key",
+    src: ":empty_file",
+    vendor: true,
+}

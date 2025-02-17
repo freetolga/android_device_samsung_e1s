@@ -97,6 +97,9 @@ PRODUCT_PACKAGES += \
     android.hardware.cas-service.example-lazy \
     android.hardware.drm-service.clearkey
 
+# Display
+PRODUCT_PACKAGES += hdr_samsung_mx.key
+
 # Fastbootd
 PRODUCT_PACKAGES += fastbootd
 
