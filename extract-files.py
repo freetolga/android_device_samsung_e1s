@@ -27,10 +27,24 @@ namespace_imports = [
 
 
 blob_fixups: blob_fixups_user_type = {
+    'vendor/bin/hw/android.hardware.graphics.composer3-service.exynos': blob_fixup()
+        .replace_needed(
+            'android.hardware.graphics.composer@2.1-resources.so',
+            'android.hardware.graphics.composer@2.1-resources_samsung.so')
+        .replace_needed(
+            'android.hardware.graphics.composer@2.2-resources.so',
+            'android.hardware.graphics.composer@2.2-resources_samsung.so'),
     'vendor/etc/init/init.nfc.samsung.rc': blob_fixup()
         .regex_replace('system', 'secure_element'),
     'vendor/etc/init/init.s5e9945.rc': blob_fixup()
         .regex_replace('vendor_spay', 'system'),
+    'vendor/lib64/android.hardware.graphics.composer@2.1-resources_samsung.so': blob_fixup()
+        .fix_soname(),
+    'vendor/lib64/android.hardware.graphics.composer@2.2-resources_samsung.so': blob_fixup()
+        .fix_soname()
+        .replace_needed(
+            'android.hardware.graphics.composer@2.1-resources.so',
+            'android.hardware.graphics.composer@2.1-resources_samsung.so'),
     (
         'vendor/lib64/hw/audio.primary.s5e9945.so',
         'vendor/lib64/libaudioproxy2.so',
