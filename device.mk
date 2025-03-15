@@ -233,3 +233,7 @@ PRODUCT_PACKAGES += \
     libcld80211 \
     wpa_supplicant \
     wpa_supplicant.conf
+
+# Fingerprint
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint-service.samsung
