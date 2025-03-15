@@ -21,7 +21,7 @@ TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_VARIANT := cortex-a76
 
 # DTS
-BOARD_DTBO_CFG := device/samsung/e1s/configs/kernel/dtbo.cfg
+BOARD_DTBO_CFG := device/samsung/e2s/configs/kernel/dtbo.cfg
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_INCLUDE_RECOVERY_DTBO := true
 BOARD_KERNEL_SEPARATED_DTBO := true
@@ -57,19 +57,19 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := \
     KCFLAGS=-D__ANDROID_COMMON_KERNEL__ \
     TARGET_SOC=s5e9945
 TARGET_KERNEL_CONFIG := \
-    $(shell KCONFIG_CONFIG=kernel/samsung/e1s/arch/arm64/configs/erd9945_u_gki_defconfig \
-    kernel/samsung/e1s/scripts/kconfig/merge_config.sh -m -r \
-    kernel/samsung/e1s/arch/arm64/configs/gki_defconfig \
-    kernel/samsung/e1s/arch/arm64/configs/s5e9945-base_defconfig \
-    kernel/samsung/e1s/arch/arm64/configs/s5e9945-bazel_defconfig \
-    kernel/samsung/e1s/arch/arm64/configs/s5e9945_user.cfg \
-    kernel/samsung/e1s/arch/arm64/configs/s5e9945-user_defconfig \
+    $(shell KCONFIG_CONFIG=kernel/samsung/e2s/arch/arm64/configs/erd9945_u_gki_defconfig \
+    kernel/samsung/e2s/scripts/kconfig/merge_config.sh -m -r \
+    kernel/samsung/e2s/arch/arm64/configs/gki_defconfig \
+    kernel/samsung/e2s/arch/arm64/configs/s5e9945-base_defconfig \
+    kernel/samsung/e2s/arch/arm64/configs/s5e9945-bazel_defconfig \
+    kernel/samsung/e2s/arch/arm64/configs/s5e9945_user.cfg \
+    kernel/samsung/e2s/arch/arm64/configs/s5e9945-user_defconfig \
     1>/dev/null; echo erd9945_u_gki_defconfig)
 TARGET_KERNEL_NO_GCC := true
 
 # Modules
-BOARD_RECOVERY_RAMDISK_KERNEL_MODULES_LOAD := $(shell cat device/samsung/e1s/configs/kernel/modules/ramdisk)
-BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(shell cat device/samsung/e1s/configs/kernel/modules/system)
+BOARD_RECOVERY_RAMDISK_KERNEL_MODULES_LOAD := $(shell cat device/samsung/e2s/configs/kernel/modules/ramdisk)
+BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(shell cat device/samsung/e2s/configs/kernel/modules/system)
 BOARD_VENDOR_KERNEL_MODULES_LOAD := kiwi_v2.ko sec_debug_ssld_info.ko cfg80211.ko
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(BOARD_RECOVERY_RAMDISK_KERNEL_MODULES_LOAD)
 BOOT_KERNEL_MODULES := $(BOARD_RECOVERY_RAMDISK_KERNEL_MODULES_LOAD)
@@ -100,8 +100,8 @@ BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := \
 BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := $(shell echo $$(( $(BOARD_SUPER_PARTITION_SIZE) - 4 * 1024**2 )))
 
 # Properties
-TARGET_PRODUCT_PROP += device/samsung/e1s/configs/props/product.prop
-TARGET_VENDOR_PROP += device/samsung/e1s/configs/props/vendor.prop
+TARGET_PRODUCT_PROP += device/samsung/e2s/configs/props/product.prop
+TARGET_VENDOR_PROP += device/samsung/e2s/configs/props/vendor.prop
 
 # Ramdisks
 BOARD_RAMDISK_USE_LZ4 := true
@@ -116,7 +116,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/e1s
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/e2s
 
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
@@ -137,9 +137,9 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
 # VINTF
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
-    device/samsung/e1s/configs/vintf/compatibility_matrix.device.xml \
+    device/samsung/e2s/configs/vintf/compatibility_matrix.device.xml \
     hardware/samsung/vintf/samsung_framework_compatibility_matrix.xml
-DEVICE_MANIFEST_FILE := device/samsung/e1s/configs/vintf/manifest.xml
+DEVICE_MANIFEST_FILE := device/samsung/e2s/configs/vintf/manifest.xml
 
 # Wi-Fi
 BOARD_HOSTAPD_DRIVER := NL80211

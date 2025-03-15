@@ -22,7 +22,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit proprietary files
-$(call inherit-product, vendor/samsung/e1s/e1s-vendor.mk)
+$(call inherit-product, vendor/samsung/e2s/e2s-vendor.mk)
 
 # Inherit some common Lineage stuff
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
@@ -109,7 +109,7 @@ PRODUCT_PACKAGES += fastbootd
 
 # GPU Firmware
 PRODUCT_COPY_FILES += \
-    vendor/samsung/e1s/proprietary/recovery/root/lib/firmware/sgpu/vangogh_lite_unified_evt1.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/lib/firmware/sgpu/vangogh_lite_unified_evt1.bin
+    vendor/samsung/e2s/proprietary/recovery/root/lib/firmware/sgpu/vangogh_lite_unified_evt1.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/lib/firmware/sgpu/vangogh_lite_unified_evt1.bin
 
 # Graphics
 $(call inherit-product, $(SRC_TARGET_DIR)/product/angle_default.mk)

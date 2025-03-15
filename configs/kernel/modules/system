@@ -28,6 +28,7 @@ r8153_ecm.ko
 cdc-acm.ko
 usbserial.ko
 ftdi_sio.ko
+hdm.ko
 hci_uart.ko
 btsdio.ko
 btbcm.ko

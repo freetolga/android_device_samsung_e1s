@@ -21,7 +21,7 @@ from extract_utils.utils import (
 )
 
 namespace_imports = [
-    'device/samsung/e1s',
+    'device/samsung/e2s',
     'hardware/samsung',
 ]
 
@@ -90,7 +90,7 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 module = ExtractUtilsModule(
-    'e1s',
+    'e2s',
     'samsung',
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,

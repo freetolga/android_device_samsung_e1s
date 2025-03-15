@@ -14,13 +14,13 @@
 # limitations under the License.
 #
 
-## Inherit from e1s device
-$(call inherit-product, device/samsung/e1s/device.mk)
+## Inherit from e2s device
+$(call inherit-product, device/samsung/e2s/device.mk)
 
 # Branding
-PRODUCT_NAME := lineage_e1s
-PRODUCT_DEVICE := e1s
-PRODUCT_MODEL := e1s
+PRODUCT_NAME := lineage_e2s
+PRODUCT_DEVICE := e2s
+PRODUCT_MODEL := e2s
 
 # GMS
-BUILD_FINGERPRINT := samsung/e1sxxx/e1s:14/UP1A.231005.007/S921BXXU5AYA5:user/release-keys
+BUILD_FINGERPRINT := samsung/e2sxxx/e2s:14/UP1A.231005.007/S926BXXU5AYA5:user/release-keys
